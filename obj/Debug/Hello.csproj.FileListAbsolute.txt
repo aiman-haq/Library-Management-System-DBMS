@@ -1,0 +1,45 @@
+C:\Users\dell\Desktop\Hello\bin\Debug\Hello.exe.config
+C:\Users\dell\Desktop\Hello\bin\Debug\Hello.exe
+C:\Users\dell\Desktop\Hello\bin\Debug\Hello.pdb
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Form1.resources
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Properties.Resources.resources
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.exe
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.pdb
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Form2.resources
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Form3.resources
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Form4.resources
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Form5.resources
+C:\Users\dell\Desktop\Hello\obj\Debug\Hello.Form6.resources
+C:\Users\dell\Desktop\Hello(backup)\bin\Debug\Hello.exe.config
+C:\Users\dell\Desktop\Hello(backup)\bin\Debug\Hello.exe
+C:\Users\dell\Desktop\Hello(backup)\bin\Debug\Hello.pdb
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Form1.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Form2.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Form3.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Form4.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Form5.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Form6.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.Properties.Resources.resources
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.exe
+C:\Users\dell\Desktop\Hello(backup)\obj\Debug\Hello.pdb
+E:\imp folder\Hello\bin\Debug\Hello.exe.config
+E:\imp folder\Hello\bin\Debug\Hello.exe
+E:\imp folder\Hello\bin\Debug\Hello.pdb
+E:\imp folder\Hello\obj\Debug\Hello.csprojAssemblyReference.cache
+E:\imp folder\Hello\obj\Debug\Hello.Form1.resources
+E:\imp folder\Hello\obj\Debug\Hello.Form2.resources
+E:\imp folder\Hello\obj\Debug\Hello.Form3.resources
+E:\imp folder\Hello\obj\Debug\Hello.Form4.resources
+E:\imp folder\Hello\obj\Debug\Hello.Form5.resources
+E:\imp folder\Hello\obj\Debug\Hello.Form6.resources
+E:\imp folder\Hello\obj\Debug\Hello.Properties.Resources.resources
+E:\imp folder\Hello\obj\Debug\Hello.csproj.GenerateResource.cache
+E:\imp folder\Hello\obj\Debug\Hello.csproj.CoreCompileInputs.cache
+E:\imp folder\Hello\obj\Debug\Hello.exe
+E:\imp folder\Hello\obj\Debug\Hello.pdb
