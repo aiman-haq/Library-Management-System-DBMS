@@ -71,5 +71,42 @@ namespace Hello
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Dataconnection i = new Dataconnection();
+            //string query2 = " (select max(Book_Issue_ID) from book_issue) + 1 ";
+            //string query3 = " (select title_id from title where isbn = '" + textBox1.Text.ToString() + "') ";
+            int CategoryID = 0;
+            if (radioButton1.Checked == true)
+            {
+                CategoryID = 4;
+            }
+            else if (radioButton2.Checked == true)
+            {
+                CategoryID = 3;
+            }
+            else if (radioButton3.Checked == true)
+            {
+                CategoryID = 1;
+            }
+            else if (radioButton4.Checked == true)
+            {
+                CategoryID = 2;
+            }
+          
+            string query1 = " insert into book_issue ([Book_Issue_ID] ,[Title_ID] ,[Issued_by] ,[Issued_to]" +
+                ",[Title_Category_idCategory] ,[Issue_Date] ,[Return_Date] ,[Issued]) " +
+                "values ( (select max(Book_Issue_ID) from book_issue) + 1 , (select title_id from title where isbn = '" + textBox1.Text.ToString() + "') ," +
+                " '"+ textBox11.Text.ToString() + "', '"+ textBox4.Text.ToString()+"'," +
+                " '"+ CategoryID.ToString() +"', '"+ dateTimePicker1.Value.ToString() + "', '" + dateTimePicker2.Value.ToString() + "'," +
+                " '"+ '1' +"')";
+            i.Inserts(query1);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
