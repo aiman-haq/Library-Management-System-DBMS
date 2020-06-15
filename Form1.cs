@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,6 +33,7 @@ namespace Hello
         private void button1_Click(object sender, EventArgs e)
         {
             Dataconnection c = new Dataconnection();
+            //string query4 = "select qu ";
             String query = "select * from Title where title_name like '%" + textBox1.Text.ToString() + "%'";
             string query2 = "and Title_ID in (select Title_ID from Title_has_Author where  Author_id in ( select Author_id from Author where Full_name like '%" + textBox2.Text.ToString() + "%'))";
             string query3 = "and Title_ID in (select Title_ID from Title_has_Publisher where  publisher_id in ( select publisher_id from publisher where Full_name like '%" + textBox3.Text.ToString() + "%'))";
@@ -63,15 +66,17 @@ namespace Hello
             {
                 query = query + "and Category_idCategory = " + CategoryID;
             }
-            
 
+            query = query + "and title_id in (select title_id from Book_quantity_remaining where available_quantity > 0 )";
             DataTable d1 = c.Select(query);
-
+           
+            
             dataGridView1.DataSource = d1;
+           
             int numRowCount = dataGridView1.RowCount;
             if (numRowCount<=1) 
-            { MessageBox.Show(" no match"); }
-            else { MessageBox.Show("matches"); }
+            { MessageBox.Show("There is no such book in our library!"); }
+            else { MessageBox.Show("Book found!"); }
 
         }
 

@@ -11,10 +11,10 @@ namespace Hello
 {
     internal class Dataconnection
     {
-        //DESKTOP-92RB685\SQLEXPRESS
+        
         public SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-92RB685\SQLEXPRESS ;Initial Catalog=Lib;Integrated Security=True");
         public SqlCommand cmd = new SqlCommand();
-        //Did you change the sqlconnection?
+        
 
         public Dataconnection()
         { }

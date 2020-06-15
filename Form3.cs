@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hello
@@ -94,19 +87,33 @@ namespace Hello
             {
                 CategoryID = 2;
             }
-          
-            string query1 = " insert into book_issue ([Book_Issue_ID] ,[Title_ID] ,[Issued_by] ,[Issued_to]" +
-                ",[Title_Category_idCategory] ,[Issue_Date] ,[Return_Date] ,[Issued]) " +
-                "values ( (select max(Book_Issue_ID) from book_issue) + 1 , (select title_id from title where isbn = '" + textBox1.Text.ToString() + "') ," +
-                " '"+ textBox11.Text.ToString() + "', '"+ textBox4.Text.ToString()+"'," +
-                " '"+ CategoryID.ToString() +"', '"+ dateTimePicker1.Value.ToString() + "', '" + dateTimePicker2.Value.ToString() + "'," +
-                " '"+ '1' +"')";
-            i.Inserts(query1);
+            if (textBox1.TextLength > 0 &&
+              (radioButton1.Checked == true || radioButton2.Checked == true || radioButton3.Checked == true || radioButton4.Checked == true ) 
+                 && textBox4.TextLength > 0 && textBox11.TextLength > 0 && checkBox1.Checked==true)            
+            {
+                string query1 = " insert into book_issue ([Book_Issue_ID] ,[Title_ID] ,[Issued_by] ,[Issued_to]" +
+                    ",[Title_Category_idCategory] ,[Issue_Date] ,[Return_Date] ,[Issued]) " +
+                    "values ( (select max(Book_Issue_ID) from book_issue) + 1 , (select title_id from title where isbn = '" + textBox1.Text.ToString() + "') ," +
+                    " '" + textBox11.Text.ToString() + "', '" + textBox4.Text.ToString() + "'," +
+                    " '" + CategoryID.ToString() + "', '" + dateTimePicker1.Value.ToString() + "', '" + dateTimePicker2.Value.ToString() + "'," +
+                    " '" + '1' + "')";
+                i.Inserts(query1);
+                MessageBox.Show("Book Issued!");
+            }
+            else 
+            {
+                MessageBox.Show("Book cannot be issued. Please enter all the details!");
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -24,6 +24,26 @@ namespace Hello
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dataconnection i = new Dataconnection() ;
+            string query1 = " UPDATE book_issue " +
+                "SET issued = ((0))" +
+                "WHERE title_id = (select title_id from title where isbn = '"+ textBox1.Text.ToString() +"' and issued = ((1)))" +
+                "and issued_to = '"+ textBox4.Text.ToString()+"' ";
+
+            i.Inserts(query1);
+            MessageBox.Show("Book Returned");
+
+
 
         }
     }
