@@ -33,7 +33,7 @@ namespace Hello
         private void button1_Click(object sender, EventArgs e)
         {
             Dataconnection c = new Dataconnection();
-            //string query4 = "select qu ";
+            
             String query = "select * from Title where title_name like '%" + textBox1.Text.ToString() + "%'";
             string query2 = "and Title_ID in (select Title_ID from Title_has_Author where  Author_id in ( select Author_id from Author where Full_name like '%" + textBox2.Text.ToString() + "%'))";
             string query3 = "and Title_ID in (select Title_ID from Title_has_Publisher where  publisher_id in ( select publisher_id from publisher where Full_name like '%" + textBox3.Text.ToString() + "%'))";
