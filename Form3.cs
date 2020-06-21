@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Hello
@@ -68,8 +69,7 @@ namespace Hello
         private void button1_Click_1(object sender, EventArgs e)
         {
             Dataconnection i = new Dataconnection();
-            //string query2 = " (select max(Book_Issue_ID) from book_issue) + 1 ";
-            //string query3 = " (select title_id from title where isbn = '" + textBox1.Text.ToString() + "') ";
+            
             int CategoryID = 0;
             if (radioButton1.Checked == true)
             {
@@ -87,8 +87,13 @@ namespace Hello
             {
                 CategoryID = 2;
             }
-            if (textBox1.TextLength > 0 &&
-              (radioButton1.Checked == true || radioButton2.Checked == true || radioButton3.Checked == true || radioButton4.Checked == true ) 
+            else
+            {
+                MessageBox.Show("Please choose the valid category");
+                return;
+            }
+
+            if (textBox1.TextLength > 0  
                  && textBox4.TextLength > 0 && textBox11.TextLength > 0 && checkBox1.Checked==true)            
             {
                 string query1 = " insert into book_issue ([Book_Issue_ID] ,[Title_ID] ,[Issued_by] ,[Issued_to]" +
@@ -114,6 +119,44 @@ namespace Hello
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dataconnection s = new Dataconnection();
+            // Query to check whether the isbn is valid or not jese >=1 kiya tha
+            string check_book = "select Category_idCategory, title_name from title where isbn = '" + textBox1.Text.ToString() +"' ";
+            DataTable available_book = s.Select(check_book);
+            bool bookexists = available_book.Rows.Count >= 1;
+            if (!bookexists)
+            {
+                MessageBox.Show("Can not auto fill. Enter Valid ISBN.");
+                return;
+            }
+            int CategoryID = available_book.Rows[0].Field<int>(0);
+            string title = available_book.Rows[0].Field<string>(1);
+            textBox2.Text = title;
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            if (CategoryID == 4)
+            {
+                radioButton1.Checked = true;
+                
+            }
+            else if (CategoryID == 3)
+            {
+                radioButton2.Checked = true;
+            }
+            else if (CategoryID == 1 )
+            {
+                radioButton3.Checked = true;
+            }
+            else if (CategoryID == 2)
+            {
+                radioButton4.Checked = true;
+            }
         }
     }
 }

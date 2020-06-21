@@ -62,13 +62,11 @@ namespace Hello
                     del.Inserts(query1);
                     del.Inserts(query2);
                     del.Inserts(query3);
-                    MessageBox.Show("Book has been removed successfully!");
-                    //dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                    
                 }
-
-                //int firstRowIndex = dataGridView1.SelectedRows.Count - 1;
-                //string cell = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                //  string cell2 = dataGridView1.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
+                //dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                MessageBox.Show("Book has been removed successfully, please press search again to update your search!");
+                
 
             }
             
@@ -163,6 +161,11 @@ namespace Hello
             comboBox1.Items.Add("Short story");
             comboBox1.Items.Add("Suspense");
             comboBox1.Items.Add("Thriller");
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

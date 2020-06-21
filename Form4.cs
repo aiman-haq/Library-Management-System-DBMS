@@ -34,15 +34,30 @@ namespace Hello
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             Dataconnection i = new Dataconnection() ;
-            string query1 = " UPDATE book_issue " +
-                "SET issued = ((0))" +
-                "WHERE title_id = (select title_id from title where isbn = '"+ textBox1.Text.ToString() +"' and issued = ((1)))" +
-                "and issued_to = '"+ textBox4.Text.ToString()+"' ";
+            string finding_issued_book = "select * from book_issue where title_id in (select title_id from title where isbn = '" + textBox1.Text.ToString() + "') and issued = ((1))" +
+                " and issued_to = '" + textBox4.Text.ToString() + "' ";
+            DataTable issued_books = i.Select(finding_issued_book);
+            bool IssuedBookExists = issued_books.Rows.Count >= 1;
+            if (!IssuedBookExists)
+            {
 
-            i.Inserts(query1);
-            MessageBox.Show("Book Returned");
+                MessageBox.Show("Book could not be returned");
+                return;
+            }
+            else
+            {
+                string query1 = " UPDATE book_issue " +
+                    "SET issued = ((0))" +
+                    "WHERE title_id = (select title_id from title where isbn = '" + textBox1.Text.ToString() + "' and issued = ((1)))" +
+                    "and issued_to = '" + textBox4.Text.ToString() + "' ";
+                i.Inserts(query1);
 
+                MessageBox.Show("Book Returned");
+
+            }
 
 
         }

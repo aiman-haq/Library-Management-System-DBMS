@@ -35,12 +35,12 @@ namespace Hello
             Dataconnection c = new Dataconnection();
             
             String query = "select * from Title where title_name like '%" + textBox1.Text.ToString() + "%'";
-            string query2 = "and Title_ID in (select Title_ID from Title_has_Author where  Author_id in ( select Author_id from Author where Full_name like '%" + textBox2.Text.ToString() + "%'))";
-            string query3 = "and Title_ID in (select Title_ID from Title_has_Publisher where  publisher_id in ( select publisher_id from publisher where Full_name like '%" + textBox3.Text.ToString() + "%'))";
+            string query2 = " and Title_ID in (select Title_ID from Title_has_Author where  Author_id in ( select Author_id from Author where Full_name like '%" + textBox2.Text.ToString() + "%'))";
+            string query3 = " and Title_ID in (select Title_ID from Title_has_Publisher where  publisher_id in ( select publisher_id from publisher where Full_name like '%" + textBox3.Text.ToString() + "%'))";
+            query = query + query2 + query3;
             if (comboBox1.SelectedIndex != -1)
             {
-                query = query + " and Title_ID in (select Title_ID from Title_has_Type where  Type_Type_id in ( select type_id from type_3 where type_name = '" + comboBox1.Text + "'))" + query2
-                    + query3 ;
+                query = query + " and Title_ID in (select Title_ID from Title_has_Type where  Type_Type_id in ( select type_id from type_3 where type_name = '" + comboBox1.Text + "'))";
                 
             }
             
